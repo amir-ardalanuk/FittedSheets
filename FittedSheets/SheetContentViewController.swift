@@ -174,7 +174,7 @@ public class SheetContentViewController: UIViewController {
             self.contentView.layoutSubviews()
         }
         
-        self.preferredHeight = self.contentView.systemLayoutSizeFitting(fittingSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow).height
+        self.preferredHeight = self.contentView.systemLayoutSizeFitting(fittingSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow).height - (self.contentBottomConstraint?.constant ?? 0)
         self.contentTopConstraint?.isActive = true
         UIView.performWithoutAnimation {
             self.contentView.layoutSubviews()
